@@ -2,13 +2,13 @@ header {background-color: darkcyan;}
 .table {
 	width: 100%;
 	margin-bottom: 20px;
-	border: 5px solid #fff;
-	border-top: 5px solid #fff;
-	border-bottom: 3px solid #fff;
+	border: 5px solid #a0ffc4;
+	border-top: 5px solid #a0ffc4;
+	border-bottom: 3px solid #a0ffc4;
 	border-collapse: collapse; 
 	outline: 3px solid #00ff62;
 	font-size: 15px;
-	background: #fff!important;
+	background: #a0ffc4!important;
 }
 .table th {
 	font-weight: bold;
@@ -17,14 +17,14 @@ header {background-color: darkcyan;}
 	border: none;
 	text-align: center;
 	font-size: 15px;
-	border-top: 3px solid #fff;
+	border-top: 3px solid #a0ffc4;
 	border-bottom: 3px solid #00ff62;
 }
 .table td {
 	padding: 7px;
 	border: none;
-	border-top: 3px solid #fff;
-	border-bottom: 3px solid #fff;
+	border-top: 3px solid #a0ffc4;
+	border-bottom: 3px solid #a0ffc4;
 	font-size: 15px;
 }
 .table tbody tr:nth-child(even){
