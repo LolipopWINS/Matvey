@@ -1,4 +1,55 @@
-header {background-color: darkcyan;}
+header {background-color: rgb(182, 252, 248);}
+.main {background-color: pink}
+.sec {background-color: rgb(255, 226, 172);}
+.header_wraper 
+{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+.header_logo
+{
+	flex-basis: 20%;
+}
+.header_menu
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+.header_item
+{
+	margin-right: 30px;
+}
+.header_item :last-child
+{
+	margin-right: 0;
+}
+.footer_warper
+{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+.footer_br 
+{
+	margin-left: 30px;
+}
+.footer_item 
+{
+	margin-right: 20%;
+}
+.htmlcards
+{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 20%);
+}
+.cards
+{
+	grid-column: span 1;
+	margin-bottom: 10px;
+}
 .table {
 	width: 100%;
 	margin-bottom: 20px;
