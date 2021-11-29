@@ -82,3 +82,56 @@ header {background-color: rgb(182, 252, 248);}
 	background: #f8f8f8!important;
 }
 .jod {background-color: deeppink;}
+.grid-container{
+display: grid;
+justify-content: center;
+grid-template-rows: 1fr 1fr 1fr;
+grid-template-columns: 1fr 1fr;
+grid-gap: 2vw;
+justify-items: center;
+margin-top: 20px;
+padding-top: 200px;
+}
+.main-form{
+	width: 77%;
+	border:5px solid rebeccapurple;
+	padding: 40px;
+	border-radius: 40px;
+	box-shadow: black;
+}
+/* Текст не выделяется */
+.noselect{
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+html{box-sizing: border-box;}
+body{
+	font-family: 'Alegoreya Sans SC';
+	font-style: normal;
+	font-size: 18px;
+	line-height: normal;
+	font-weight: normal;
+	--background-color: rgb(255, 255, 255);
+	--text-color: black;
+}
+main{
+	background: var(--background-color);
+	color: var(--text-color);
+}
+:root{
+	--dark-background-color: black;
+	--dark-text-color:white;
+}
+body.theme-dark{
+	--background-color: var(--dark-background-color);
+	--text-color:var(--dark-text-color);
+}
+@media (prefers-color-scheme: dark) {
+	body.theme-auto{
+		--background-color: var(--dark-background-color);
+		--text-color:var(--dark-text-color);
+	}
+}

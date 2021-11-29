@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/style.css" rel="stylesheet">
+    <title>js</title>
+</head>
+<body>
+    
+</body>
+
+<header>
+    <h1> Веб-технологии</h1>
+    <img src="Images\logo.png" alt="Лого" height="200" width="200">
+     <nav>
+         <ul>
+             <li><a href="Pages\O sebe.html"> О себе </a></li>
+             <li><a href="Pages\Rezume.html"> Резюме </a></li>
+             <li><a href="Pages\Portfolio.html"> Портфолио </a></li>
+             <li><a href="Pages\Compitencii.html"> Компетенции </a></li>
+             <li><a href="Pages\Contacti.html"> Контакты </a></li>            
+         </ul>
+        </nav>
+ </header>
+
+ <main class="main1">
+    <div>
+        <div>выберите цветовую тему</div>
+        <select name="" id="theme">
+            <option value="auto">По умолчанию</option>
+            <option value="light">Светлая</option>
+            <option value="dark">Тёмная</option>
+        </select>
+        <script>
+            function applyTheme(theme){
+                document.body.classList.remove("theme-auto","theme-light","theme-dark");
+                document.body.classList.add(`theme-${theme}`);
+            }
+            
+            document.addEventListener("DOMContentLoaded",() =>{
+                document.querySelector("#theme").addEventListener("change",function (){
+                    applyTheme(this.value);
+                });
+            }
+            )
+
+
+        </script>
+    </div>
+
+
+    <div class="grid-container">
+        <div class="main-form">
+        
+        <div class="noselect">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, alias! Iste accusantium placeat, porro maxime voluptates harum fuga architecto nihil suscipit dolor distinctio vel fugiat consequuntur, ab provident, expedita natus?
+            </div>
+            <div>
+                <img src="../Images/sotka.jpg" alt="">
+            </div>
+        </div>
+        <div class="main-form">
+            <textarea name="" id="textarea" cols="30" rows="10"></textarea><br>
+            <button>Кнопка</button>
+        </div>
+        <div class="main-form"></div>
+        <div class="main-form"></div>
+        <div class="main-form"></div>
+    </div>
+ </main>
+ <footer>
+    <div>
+        <br>
+        Сайт разработан зелёными человечками!   
+        <br>        
+        <i class="fas fa-hashtag"></i>
+    </div>
+</footer>
+</html>
