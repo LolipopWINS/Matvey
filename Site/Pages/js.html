@@ -74,6 +74,12 @@
         <div class="main-form">
             <textarea name="" id="textarea" cols="30" rows="10"></textarea><br>
             <button>Кнопка</button>
+            <script>
+                document.getElementById("textarea").oninput=function text(){
+                    localStorage.setItem('savetext', document.getElementById("textarea").value);
+                }
+                document.getElementById("textarea").value=localStorage.getItem("savetext");
+            </script>
         </div>
         <div class="main-form"></div>
         <div class="main-form"></div>
