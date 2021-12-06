@@ -8,8 +8,8 @@
     <title>js</title>
 </head>
 <body>
-    
-</body>
+
+
 
 <header>
     <h1> Веб-технологии</h1>
@@ -43,9 +43,19 @@
                 document.querySelector("#theme").addEventListener("change",function (){
                     applyTheme(this.value);
                 });
-            }
-            )
+            });
 
+            document.addEventListener("DOMContentLoaded",() =>{
+                const savedTheme = localStorage.getItem("theme") || "auto";
+                    applyTheme(savedTheme);
+                    for(const optionElement of document.querySelectorAll("#theme option")){
+                        optionElement.selected = savedTheme === optionElement.value;
+                    }
+                    document.querySelector("#theme").addEventListener("change",function (){
+                        localStorage.setItem("theme", this.value);
+                        applyTheme(this.value);
+                });
+            });
 
         </script>
     </div>
@@ -69,13 +79,49 @@
         <div class="main-form"></div>
         <div class="main-form"></div>
     </div>
+    <section>
+        <h1>хранение localStorage</h1>
+        <div class="out"></div>
+
+    </section>
  </main>
- <footer>
+    <footer>
     <div>
         <br>
         Сайт разработан зелёными человечками!   
         <br>        
         <i class="fas fa-hashtag"></i>
     </div>
-</footer>
+    </footer>
+    <script>
+        localStorage.setItem('data',6);
+        console.log(localStorage.getItem('data'));
+
+        const a = [4,5,6,7];
+        localStorage.setItem('a',JSON.stringify(a));
+        let b = localStorage.getItem('a');
+        b=JSON.parse(b);
+        console.log(b);
+        console.log(b[0]);
+        console.log(b[1]);
+        console.log(typeof b);
+
+        const c = {
+            hello:5,
+            k:4,
+            4:'hi'
+        };
+        localStorage.setItem('c',JSON.stringify(c));
+        let d = localStorage.getItem('c');
+        d=JSON.parse(d);
+        console.log(d);
+        console.log(typeof d);
+
+        window.addEventListener('storage',function(e){
+            console.log('change');
+            document.querySelector('.out').textContent = localStorage.getItem('b1');
+        });
+
+    </script>
+</body>
 </html>
