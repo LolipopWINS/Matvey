@@ -25,6 +25,7 @@ header {background-color: rgb(182, 252, 248);}
 {
 	margin-right: 0;
 }
+footer{background-color:rgb(182, 252, 248);}
 .footer_warper
 {
 	display: flex;
