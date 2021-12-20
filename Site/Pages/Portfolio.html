@@ -1,50 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Example</title>
-        <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css"> 
-    </head>
-    <body>
-    
-        <header>
-           <h1> Веб-технологии</h1>
-        <div class="header_wraper">
-           <div class="header_logo"><img src="..\Images\logo.png" alt="Лого" height="200" width="200"></div>
-           <div class="header_nav">
-           <nav>
-                <ul class="header_menu">
-                    <li class="header_item"><a href="..\Pages\O sebe.html"> О себе </a></li>
-                    <li class="header_item"><a href="..\Pages\Rezume.html"> Резюме </a></li>
-                    <li class="header_item"><a href="..\Pages\Portfolio.html"> Портфолио </a></li>
-                    <li class="header_item"><a href="..\index.html#potato"> Компетенции </a></li>
-                    <li class="header_item"><a href="..\Pages\Contacti.html"> Контакты </a></li>            
-                </ul>
-            </nav>
-            </div> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+    <style>
+         .wrapper{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-items: center; 
+            align-items: center;
+            border: 2px solid #270b0b;
+            border-radius: 50px;
+            padding: 65px;
+        }
+        .item{
+            grid-column: span 1;
+            margin-bottom: 20px;
+            margin-top: 20px;}
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header class= "header">
+        <div class="header_wrapper">
+        <div class="header_logo"><a href="../index.html"><img src="../img/logo_.png" alt="Логотип" width="80"></a></div>
+        <nav class="header_nav">           
+            <ul class="header_menu">
+                <li class="header_item "><a class = "a_underline" href="../pages/self.html">О себе</a></li>
+                <li class="header_item "><a class = "a_underline" href="../pages/resume.html"  target="_blank">Резюме</a></li>
+                <li class="header_item "><a class = "a_underline" href="../pages/portfolio.html">Портфолио</a></li>
+                <li class="header_item "><a class = "a_underline" href="../index.html#comp">Компетенции</a></li>
+                <li class="header_item"><a class = "a_underline" href="../pages/contacts.html">Контакты</a></li>
+                <li class="header_item_last "><a class = "a_underline" href="../pages/js.html">JavaScript</a></li>
+            </ul>
+        </nav>
         </div>
-        </header>
-
-    <main>
-        <div class="main1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur porro dolor consectetur corporis iusto cum earum facere aperiam hic voluptatem optio in rerum sapiente architecto ea, accusamus vel animi sint!
+        <div class="header_preview">
+        <h1>Веб - технологии</h1>
+        <h3>Университет "Дубна"</h3>
         </div>
-    </main>
+    </header>
     <section>
-    <footer>
-        <div class = "footer_warper">
-            <div class="footer_br">
-        	Cайт разработан Клевцовым Матвеем, группа 2271 Б-И, Copyright © 2021  
-            </div>  
-        <div class="footer_item">     
-            <a href="#" target="_blank"><i class="fab fa-vk"></i></a>    
-            <a href="#" target="_blank"><i class="fab fa-odnoklassniki"></i></a>   
-            <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
-        </div> 
-        </div>
-    </footer>
-    </section>
+        <h1>Грузоподъемность</h1>
+        <div class="wrapper">
+       <p class="item"> Поскольку грузоподъемность транспортного средства — это 
+           способность автомобиля поднять груз, максимальный для его веса, то есть наибольшая нагрузка, 
+           на которое рассчитан транспортное средство. Для автомобилей — максимальная масса груза, которую можно разместить 
+           в грузовом элементе машины, то есть кузове.</p>
+       <img class="item1" src="../img/gruz.jpg" alt="Грузоподъемность" width="500" >
+    </div>
+</section>
+<section>
+        <h1>Вождение</h1>
+        <div class="wrapper">
+            <p class="item"> Вождение автомобиля – это не только получение навыков управления машиной и знание основных теоретических правил, но и видение дорожной обстановки. 
+                В автошколе это называется - «читать дорогу»</p>
+            <img class="item1" src="../img/vozhedie.jpg" alt="Вождение" width="500" >
+       
+    </div>
+</section>
+    <section>
+        <h1>Автомобиль - это может быть опасно!</h1>
+        <div class="wrapper">
+       <p class="item"> Машина есть практически в каждой семье. Поездка на автомобиле кажется для многих из нас каждодневным делом, не требующим больших усилий и соблюдения повышенных мер безопасности.
+            Но это только кажется! Всегда следует помнить, что машина представляет источник повышенной опасности. </p>
+       <img class="item1" src="../img/opasno.jpg" alt="ДТП" width="500" >
+    </div>
+</section>
+<footer>
+    <div class="footer_wrapper">
+<p class="footer_all_icons">       
+    <a class="footer_ico" href="https://vk.com/unidubna_official"><img src="../img/vk.png" alt="Вконтакте" width="50"></a>
+    <a class="footer_ico" href="https://github.com/"><img src="../img/GitHub-Mark-64px.png" alt="GitHub" width="50"></a>
+    <a class="footer_ico" href="https://www.instagram.com/unidubna_official/"><img src="../img/inst.png" alt="Инстаграм" width="50"></a>
+</p>
+
+    <p class="footer_text">Cайт разработал Клевцов М.А., группа 2271, Copyright © 2021</p> 
+</div>
+</footer>
 </body>
 </html>

@@ -4,137 +4,577 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <title>js</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .wrapper{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            justify-items: center; 
+        }
+        .items2{
+            width: 400px;
+            height: 600px;
+            border: 2px solid rgb(175, 131, 155);
+            border-radius: 45px;
+            padding: 65px;
+            grid-column: span 1;
+            margin-bottom: 20px;
+            box-shadow: 1px 1px 6px 3px rgb(235, 221, 192);
+        }
+  
+.left { 
+  grid-area: left; 
+  }
+.right{ 
+grid-area: right; 
+  }
+
+.form-div
+{
+    padding-bottom: 20px;
+}
+.flex-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.align-center
+{
+    text-align: center;
+}
+.input-text
+{
+    border-radius: 10px;
+    background-color: rgb(250, 241, 230);
+    border-color: rgb(95, 32, 104);
+    width: 160px;
+    height: 30px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.chart__title {
+  width: 100%;
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.chart__data {
+  width: 250px;
+}
+
+.chart__input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.chart__input-group:last-of-type {
+  margin-bottom: 50px;
+}
+
+.chart__label {
+  max-width: 100px;
+  margin-right: auto;
+}
+
+.input-field {
+  font-size: inherit;
+  color: inherit;
+  text-transform: uppercase;
+  text-align: center;
+
+  white-space: normal;
+  border: 1px solid #260F01;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.chart__input {
+  width: 120px;
+  margin-right: 5px;
+}
+
+.chart__submit-button {
+  width: 100%;
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+.chart__submit-button:hover {
+  color: #1f2021;
+
+  background-color: #f1b1eb;
+}
+
+.chart__canvas-wrapper {
+  height: 250px;
+  border: 1px solid #260F01;
+  border-radius: 5px;
+}
+.container{
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 100px 50px;
+    }
+.container1{
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 30px;
+    }
+    .slider{
+        border: 3px solid #260F01;
+        width: 256px;
+        height: 188px;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    .slider-line{
+        width: 1280px;
+        height: 188px;
+        display: flex;
+        background: rgb(48, 38, 38);
+        position: relative;
+        left: 0;
+        transition: all ease 1s;
+    }
+    .mini{
+        width: 256px;
+    }
+    </style>
+    <script>
+        function checkForm(){console.log("Проверка");
+        var name = document.getElementById('name1').value;
+        console.log(name);
+        var fail="";
+        var viv = name1.value +" "+ email.value +" "+ tel.value;  
+        var tel = document.getElementById('tel');  
+        if (name==""||email==""||tel=="") 
+        fail="Заполните все поля.";    
+        else if (name1.length<=1||name1.length>30)
+        fail="Введите корректное имя.";
+        else if (tel.length>10)
+        fail = "Некорректный номер телефона.";
+        if (fail != ""){
+            document.getElementById('error').innerHTML=fail;
+        } 
+       else{
+       document.getElementById('vivod').innerHTML=viv;
+       } 
+        return false;
+        }
+
+    </script>   
+    
+<script>
+   function fanc(){
+       document.getElementById('pochta').checked=true;
+       document.getElementById('tel').checked=true;
+       document.getElementById('nootv').checked=true;
+   }
+</script>
 </head>
 <body>
-
-    <header>
-        <h1> Веб-технологии</h1>
-     <div class="header_wraper">
-        <div class="header_logo"><img src="..\Images\logo.png" alt="Лого" height="200" width="200"></div>
-        <div class="header_nav">
-        <nav>
-             <ul class="header_menu">
-                 <li class="header_item"><a href="..\Pages\O sebe.html"> О себе </a></li>
-                 <li class="header_item"><a href="..\Pages\Rezume.html"> Резюме </a></li>
-                 <li class="header_item"><a href="..\Pages\Portfolio.html"> Портфолио </a></li>
-                 <li class="header_item"><a href="..\index.html#potato"> Компетенции </a></li>
-                 <li class="header_item"><a href="..\Pages\Contacti.html"> Контакты </a></li>            
-             </ul>
-         </nav>
-         </div> 
-     </div>
-     </header>
-
- <main class="main1">
-    <div>
-        <div>выберите цветовую тему</div>
-        <select name="" id="theme">
-            <option value="auto">По умолчанию</option>
-            <option value="light">Светлая</option>
-            <option value="dark">Тёмная</option>
-        </select>
-        <script>
-            function applyTheme(theme){
-                document.body.classList.remove("theme-auto","theme-light","theme-dark");
-                document.body.classList.add(`theme-${theme}`);
-            }
-            
-            document.addEventListener("DOMContentLoaded",() =>{
-                document.querySelector("#theme").addEventListener("change",function (){
-                    applyTheme(this.value);
-                });
-            });
-
-            document.addEventListener("DOMContentLoaded",() =>{
-                const savedTheme = localStorage.getItem("theme") || "auto";
-                    applyTheme(savedTheme);
-                    for(const optionElement of document.querySelectorAll("#theme option")){
-                        optionElement.selected = savedTheme === optionElement.value;
-                    }
-                    document.querySelector("#theme").addEventListener("change",function (){
-                        localStorage.setItem("theme", this.value);
-                        applyTheme(this.value);
-                });
-            });
-
-        </script>
-    </div>
-
-
-    <div class="grid-container">
-        <div class="main-form">
-        <div class="noselect">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, alias! Iste accusantium placeat, porro maxime voluptates harum fuga architecto nihil suscipit dolor distinctio vel fugiat consequuntur, ab provident, expedita natus?
+    <header class="header">
+        <div class="header_wrapper">
+            <div class="header_logo"><a href="../index.html"><img src="../img/logo_.png" alt="Логотип" width="80"></a></div>
+            <nav class="header_nav">           
+                <ul class="header_menu">
+                    <li class="header_item "><a class = "a_underline" href="../pages/self.html">О себе</a></li>
+            <li class="header_item "><a class = "a_underline" href="../pages/resume.html"  target="_blank">Резюме</a></li>
+            <li class="header_item "><a class = "a_underline" href="../pages/portfolio.html">Портфолио</a></li>
+            <li class="header_item "><a class = "a_underline" href="../index.html#comp">Компетенции</a></li>
+            <li class="header_item"><a class = "a_underline" href="../pages/contacts.html">Контакты</a></li>
+            <li class="header_item_last "><a class = "a_underline" href="../pages/js.html">JavaScript</a></li>
+                </ul>
+            </nav>
             </div>
-            <div>
-                <img src="../Images/sotka.jpg" alt="">
-            </div>
-        </div>
-        <div class="main-form">
-            <textarea name="" id="textarea" cols="30" rows="10"></textarea><br>
-            <button>Кнопка</button>
+            <div class="header_preview">
+                <h1>Веб - технологии</h1>
+                <h3>Университет "Дубна"</h3>
+                </div>
+    </header>
+    <main class="main1">
+        <div>
+            <div>выберите цветовую тему</div>
+            <select name="" id="theme">
+                <option value="auto">По умолчанию</option>
+                <option value="light">Светлая</option>
+                <option value="dark">Тёмная</option>
+            </select>
             <script>
-                document.getElementById("textarea").oninput=function text(){
-                    localStorage.setItem('savetext', document.getElementById("textarea").value);
+                function applyTheme(theme){
+                    document.body.classList.remove("theme-auto","theme-light","theme-dark");
+                    document.body.classList.add(`theme-${theme}`);
                 }
-                document.getElementById("textarea").value=localStorage.getItem("savetext");
+                
+                document.addEventListener("DOMContentLoaded",() =>{
+                    document.querySelector("#theme").addEventListener("change",function (){
+                        applyTheme(this.value);
+                    });
+                });
+    
+                document.addEventListener("DOMContentLoaded",() =>{
+                    const savedTheme = localStorage.getItem("theme") || "auto";
+                        applyTheme(savedTheme);
+                        for(const optionElement of document.querySelectorAll("#theme option")){
+                            optionElement.selected = savedTheme === optionElement.value;
+                        }
+                        document.querySelector("#theme").addEventListener("change",function (){
+                            localStorage.setItem("theme", this.value);
+                            applyTheme(this.value);
+                    });
+                });
+    
             </script>
         </div>
-        <div class="main-form"></div>
-        <div class="main-form"></div>
-        <div class="main-form"></div>
-    </div>
-    <section>
-        <h1>хранение localStorage</h1>
-        <div class="out"></div>
 
-    </section>
- </main>
-    <footer>
-        <div class = "footer_warper">
-            <div class="footer_br">
-            	Cайт разработан Клевцовым Матвеем, группа 2271 Б-И, Copyright © 2021  
-            </div>  
-        <div class="footer_item">     
-            <a href="#" target="_blank"><i class="fab fa-vk"></i></a>    
-            <a href="#" target="_blank"><i class="fab fa-odnoklassniki"></i></a>   
-            <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
-        </div> 
+    <div class="wrapper">
+
+        <section class="items2">
+            <div class="left"></div>
+        <div class="middle">
+        <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
+            <div class="form-div" id="svaz">
+                <div>Как вам удобно получить ответ?</div>
+                <label for=""><input type="radio" id="pochta" value="по почте">по почте</label><br>
+                <label for=""><input type="radio" id="tel" value="по телефону">по телефону</label><br>
+                <label for=""><input type="radio" id="nootv" value="не отвечать">не отвечать</label><br>
+            </div>
+            <div class="form-div">
+                <label for="theme">Укажите тему вопроса:</label>
+                <select name="theme" id="theme" class="input-text">
+                    <option value="">работа</option>
+                    <option value="">сотрудничество</option>
+                    <option value="">личное</option>
+                </select>
+            </div>
+            <div class="form-div">
+                <div>И еще один вопрос?</div>
+                <label for="checkbox1"><input type="checkbox" name="" id="checkbox1">может так</label><br>
+                <label for="checkbox2"><input type="checkbox" name="" id="checkbox2">или так</label><br>
+                <label for="checkbox3"><input type="checkbox" name="" id="checkbox3">а может вот так</label>
+            </div>
+            <div class="form-div">
+            <label for="name" class="flex-row">Ваше имя:</label>
+            <input type="text" name="name1" id="name1" class="input-text">
         </div>
-    </footer>
-        <script>
-        localStorage.setItem('data',6);
-        console.log(localStorage.getItem('data'));
+        <div class="form-div" id="email1">
+            <label for="email" class="flex-row">Ваш email:</label>
+            <input type="email" name="email" id="email" class="input-text">
+        </div>
+        <div class="form-div" id="tel1">
+            <label for="tel" class="flex-row">Ваш номер телефона:</label>
+            <input type="tel" name="tel" id="tel" class="input-text">
+        </div>
+        <div class="form-div">
+           <div>Задайте вопрос:</div>
+           <div>
+               <textarea cols="30"></textarea>
+           </div>
+        </div>
+        <div class="align-center">
+          <input type="submit" value="Отправить вопрос" class="input-text">
+        </div>
+        <div id="error" style="color: rgb(219, 173, 204);"></div>
+        <div id="vivod" style="color: rgb(158, 184, 201);"></div>
+        </form>
+    </div>
+    <div class="right"></div>
+</section>
 
-        const a = [4,5,6,7];
-        localStorage.setItem('a',JSON.stringify(a));
-        let b = localStorage.getItem('a');
-        b=JSON.parse(b);
-        console.log(b);
-        console.log(b[0]);
-        console.log(b[1]);
-        console.log(typeof b);
 
-        const c = {
-            hello:5,
-            k:4,
-            4:'hi'
+        <section class="items2">
+            <div class="noselect">
+                
+                Ремонт машин — процесс восстановления работоспособности машин путём устранения неисправностей и замены узлов и деталей<br>
+                [Терминологический словарь по строительству на 12 языках (ВНИИИС Госстроя СССР)] Тематики система техн.<br>
+            </div>
+            <div>
+                <img src="" alt="">
+            </div>
+            <img src="../img/M4.jpg" alt="M4" width="400px">
+        </section>
+
+
+        <section class="items2">
+            <textarea id="textarea" cols="50" rows="30"></textarea>
+            <button>Очистить</button>
+
+<script>
+        textarea.value = localStorage.getItem('area');
+        textarea.oninput = () => {
+          localStorage.setItem('area', textarea.value)
         };
-        localStorage.setItem('c',JSON.stringify(c));
-        let d = localStorage.getItem('c');
-        d=JSON.parse(d);
-        console.log(d);
-        console.log(typeof d);
 
-        window.addEventListener('storage',function(e){
-            console.log('change');
-            document.querySelector('.out').textContent = localStorage.getItem('b1');
-        });
+    </script>
+        </section>
 
-        </script>
+        <section class="items2">
+            <h1 class="chart__title">Диаграмма "Популярность языков программирования"</h1>
+            
+            <form class="chart__data" action="#" method="POST">
+              <div class="chart__input-group">
+                <label class="chart__label" for="javascript">JavaScript</label>
+                <input class="chart__input input-field" type="number" name="javascript" id="javascript" min="0" max="100" required>
+                <span>%</span>
+              </div>
+        
+              <div class="chart__input-group">
+                <label class="chart__label" for="php">PHP</label>
+                <input class="chart__input input-field" type="number" name="php" id="php" min="0" max="100" required>
+                <span>%</span>
+              </div>
+        
+              <div class="chart__input-group">
+                <label class="chart__label" for="python">Python</label>
+                <input class="chart__input input-field" type="number" name="python" id="python" min="0" max="100" required>
+                <span>%</span>
+              </div>
+        
+              <input class="chart__submit-button input-field" type="submit" value="Показать график">
+            </form>
+        
+            <div class="chart__canvas-wrapper">
+                <canvas id="canvas" width="500" height="250">Браузер не поддерживает Canvas</canvas>
+            </div>
+            <script>
+                const MAX_PERCENTAGE = 100;
 
+const COLORS = [
+  `#ffc8cb`,
+  `#8b00ff`,
+  `#cda4de`
+];
+
+const BarSize = {
+  MAX_HEIGHT: 190,
+  WIDTH: 50
+};
+
+const BarCoordinate = {
+  INITIAL_X: 80,
+  INITIAL_Y: 220
+}
+
+const Font = {
+  SIZE: `18px`,
+  FAMILY: `Tahoma`
+};
+
+const LabelCoordinate = {
+  INITIAL_X: 30,
+  INITIAL_Y: 70
+}
+
+const Gap = {
+  HORIZONTAL: 60,
+  VERTICAL: 30
+}
+
+const formElement = document.querySelector(`.chart__data`);
+const inputElements = formElement.querySelectorAll(`.chart__input`);
+
+const getData = (inputElements) => {
+  return Array.from(inputElements).map((input, index) => ({
+    name: input.name,
+    value: input.value,
+    color: COLORS[index]
+  }));
+};
+
+const canvas = document.querySelector(`#canvas`);
+const ctx = canvas.getContext(`2d`);
+
+const renderChart = (items) => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  let currentLabelY = LabelCoordinate.INITIAL_Y;
+  let currentBarX = BarCoordinate.INITIAL_X;
+  const gapBetweenBars = BarSize.WIDTH + Gap.HORIZONTAL;
+
+  for (const item of items) {
+    const barHeight = (item.value * BarSize.MAX_HEIGHT) / MAX_PERCENTAGE;
+    
+    ctx.fillStyle = item.color;
+    ctx.font = `${Font.SIZE} ${Font.FAMILY}`;
+    ctx.save();
+    ctx.translate(0, canvas.height);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText(item.name.toUpperCase(), LabelCoordinate.INITIAL_X, currentLabelY);
+    ctx.restore();
+    ctx.fillRect(currentBarX, BarCoordinate.INITIAL_Y, BarSize.WIDTH, -barHeight);
+    
+    currentBarX += gapBetweenBars;
+    currentLabelY += gapBetweenBars;
+  }
+};
+
+formElement.addEventListener(`submit`, (evt) => {
+  evt.preventDefault();
+  renderChart(getData(inputElements));
+  formElement.reset();
+});
+            </script>
+          </section>
+
+        
+        <section class="items2">
+            <div class="container1">
+                <div class="slider">
+                    <div class="slider-line">
+                        <img src="../img/M5.jpg" alt="" class="mini">
+                        <img src="../img/M6.jpg" alt="" class="mini">
+                        <img src="../img/M7.jpg" alt="" class="mini">
+                        <img src="../img/M8.jpg" alt="" class="mini">
+                        <img src="../img/M9.jpg" alt="" class="mini">
+                    </div>
+                </div>
+                <button class="slider-prev">Назад</button>
+                <button class="slider-next">Вперед</button>
+            </div>
+            <script>
+                let offset = 0;
+                const sliderLine = document.querySelector('.slider-line');
+                document.querySelector('.slider-next').addEventListener('click', function () {
+                    offset = offset + 256;
+                    if (offset > 1024){
+                        offset = 0;
+                    }
+                sliderLine.style.left = -offset + 'px';
+                })
+                document.querySelector('.slider-prev').addEventListener('click', function () {
+                    offset = offset - 256;
+                    //offset+=256;
+                    if (offset < 0){
+                        offset = 1024;
+                    }
+                sliderLine.style.left = -offset + 'px';
+                })
+            </script>
+        </section>
+        <section class="items2">
+            <div class="container">
+                <div id="big">
+                    <img src="../img/M5.jpg" width="256px" alt="" id="bigp" class="bigp">
+                </div>
+                <div>
+                    <img src="../img/M6.jpg" width="128px" alt="" class="smallp">
+                    <img src="../img/M7.jpg" width="128px" alt="" class="smallp">
+                    <img src="../img/M8.jpg" width="128px" alt="" class="smallp">
+                    <img src="../img/M9.jpg" width="128px" alt="" class="smallp">
+                </div>
+                <script>
+                    let el = document.getElementsByClassName('smallp');
+                    console.log(el);
+                    for (i=0; i < el.length; ++i){
+                        el[i].onclick = pic; 
+                    }
+                    function pic(event){
+                        x=document.getElementById("bigp");
+                        console.log(event.target);
+                        x.src = event.target.src; 
+                    }
+                </script>
+            </div>
+        </sectionv>
+
+            <!-- <section>
+                <h1>Хранение LocalStorage</h1>
+                    <button class="ls">Нажать</button>
+            </section>
+            <script>
+                let count = 0
+                document.querySelector('ls').onclick = () =>{
+                    count ++
+                    localStorage.setItem('b1', count);
+                };
+            </script> -->
+    </div>
+</main>
+
+<footer>
+    <div class="footer_wrapper">
+<p class="footer_all_icons">       
+    <a class="footer_ico" href="https://vk.com/unidubna_official"><img src="../img/vk.png" alt="Вконтакте" width="50"></a>
+    <a class="footer_ico" href="https://github.com/"><img src="../img/GitHub-Mark-64px.png" alt="GitHub" width="50"></a>
+    <a class="footer_ico" href="https://www.instagram.com/unidubna_official/"><img src="../img/inst.png" alt="Инстаграм" width="50"></a>
+</p>
+
+    <p class="footer_text">Cайт разработал Клевцов М.А., группа 2271, Copyright © 2021</p> 
+</div>
+</footer>
+
+<script>
+     document.getElementById('pochta').addEventListener("click", hiddenClose);
+     function hiddenClose(){
+         let x = document.getElementById('tel1');
+     if (x.style.display == "none"){
+           x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+     } 
+    
+    document.getElementById('tel').addEventListener("click", hiddenClose1);
+     function hiddenClose1(){
+   let y = document.getElementById('email1');
+  if (y.style.display == "none"){
+            y.style.display = "block";
+     } else {
+       y.style.display = "none";
+       }
+    } 
+    
+    document.getElementById('svaz').addEventListener("click", hiddenClick);
+    function hiddenClick(){
+        let x = document.getElementById('tel1');
+        let y = document.getElementById('email1');
+        if (document.getElementById('pochta').checked){
+            y.style.visibility = 'visible';
+        } else {
+            y.style.visibility = 'hidden';
+        }
+        if (document.getElementById('tel').checked){
+            x.style.visibility = 'visible';
+        } else {
+            x.style.visibility = 'hidden';
+        }
+    }
+  </script>
+<script>
+    localStorage.setItem('data', 7);
+    console.log(localStorage.getItem('data'));
+    const a = [4, 5, 6, 7, 8];
+    localStorage.setItem('a', JSON.stringify(a));
+    let b = localStorage.getItem('a');
+    b = JSON.parse(b);
+    console.log(b);
+    console.log(b[0]);
+    console.log(b[1]);
+    console.log(typeof b);
+
+    const c = {
+        hello: 6,
+        j: 3,
+        4:'hi'};
+        localStorage.setItem('c', JSON.stringify(c));
+    let d = localStorage.getItem('c');
+    d = JSON.parse(d);
+    console.log(d);
+    console.log(typeof d);
+    window.addEventListener('storage')
+</script>
 </body>
 </html>
